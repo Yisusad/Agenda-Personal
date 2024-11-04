@@ -12,8 +12,8 @@
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
+    <link href="bootstrap/css/custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
   </head>
 
@@ -34,10 +34,9 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Redes Sociales</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="#">Yoputube</a>
-              <a class="dropdown-item" href="#">Facebook </a>
-              <a class="dropdown-item" href="#">Twitter </a>
               <a class="dropdown-item" href="#">Instagram</a>
+              <a class="dropdown-item" href="#">Facebook </a>
+              <a class="dropdown-item" href="#">Twitter </a>             
             </div>
           </li>
         </ul>
@@ -49,11 +48,27 @@
     </nav>
 
     <div  class="container">
+      <h1 class="page-header text-center">Agenda de Contactos</h1>
+      <div class="row">
+        <a href="" class="btn btn-primary" data-toggle="modal"><span class="fa fa-plus"></span> Nuevo Contacto </a>
+        <table class="table table-bordered trable-striped" style="margin-top:20px">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Nombre</th>
+              <th>Telefono</th>
+              <th>Correo</th>
+              <th>Direccion</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+           
+          </tbody>
+        </table>
 
-      
-      
-      
 
+      </div>     
     </div><!-- /.container -->
 
     <!-- Bootstrap core JavaScript
