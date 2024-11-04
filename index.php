@@ -1,4 +1,7 @@
-
+<?php
+require_once "controladores/agregar.controlador.php";
+require_once "modelos/agregar.modelo.php";
+?>
 <!doctype html>
 <html lang="es">
   <head>
@@ -55,7 +58,6 @@
           <table class="table table-bordered trable-striped" style="margin-top:20px">
             <thead>
               <tr>
-                <th>Id</th>
                 <th>Nombre</th>
                 <th>Telefono</th>
                 <th>Correo</th>
@@ -64,13 +66,30 @@
               </tr>
             </thead>
             <tbody>
-            
+              <?php
+                include_once "modelos/conexion.php";
+
+                $agregados = ControladorAgregar::ctrSeleccionarAgregados();
+
+                foreach ($agregados as $key => $value) { ?>
+                  <tr>
+                    <td><?= $value['Nombre']; ?></td>
+                    <td><?= $value['Telefono']; ?></td>
+                    <td><?= $value['Correo']; ?></td>
+                    <td><?= $value['Direccion']; ?></td>
+                    <td>
+                      <a href="#>" class="btn btn-warning"><span class="fa fa-pencil-alt"></span></a>
+                      <a href="#" class="btn btn-danger"><span class="fa fa-times"></span></a>
+                    </td>
+                  </tr>
+                <?php } 
+              ?>                      
             </tbody>
           </table>
         </div>
       </div>     
     </div><!-- /.container -->
-    <?php include('openModal.php');?>
+    <?php include('vistas/openModal.php');?>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

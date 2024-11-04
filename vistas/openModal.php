@@ -9,7 +9,7 @@
             </div>
             <div class="modal-body">
                 <div class="container-fluid">
-                    <form action="agregar.php" method="post">
+                    <form action="vistas/agregar.php" method="post">
                         <div class="row form-group">
                             <div class="col-sm-2">
                                 <label class="control-label">Nombre:</label>
@@ -31,7 +31,7 @@
                                 <label class="control-label">Correo:</label>
                             </div>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" name="emailContacto">
+                                <input type="email" class="form-control" name="correoContacto">
                             </div>
                         </div>
                         <div class="row form-group">
