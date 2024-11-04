@@ -50,26 +50,27 @@
     <div  class="container">
       <h1 class="page-header text-center">Agenda de Contactos</h1>
       <div class="row">
-        <a href="" class="btn btn-primary" data-toggle="modal"><span class="fa fa-plus"></span> Nuevo Contacto </a>
-        <table class="table table-bordered trable-striped" style="margin-top:20px">
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Nombre</th>
-              <th>Telefono</th>
-              <th>Correo</th>
-              <th>Direccion</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-           
-          </tbody>
-        </table>
-
-
+        <div class="col-sm-12">
+          <a href="#openModal" class="btn btn-primary" data-toggle="modal"><span class="fa fa-plus"></span> Nuevo Contacto </a>
+          <table class="table table-bordered trable-striped" style="margin-top:20px">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Telefono</th>
+                <th>Correo</th>
+                <th>Direccion</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+            
+            </tbody>
+          </table>
+        </div>
       </div>     
     </div><!-- /.container -->
+    <?php include('openModal.php');?>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
