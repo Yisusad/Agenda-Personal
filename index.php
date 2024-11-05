@@ -54,7 +54,24 @@ require_once "modelos/agregar.modelo.php";
       <h1 class="page-header text-center">Agenda de Contactos</h1>
       <div class="row">
         <div class="col-sm-12">
-          <a href="#openModal" class="btn btn-primary" data-toggle="modal"><span class="fa fa-plus"></span> Nuevo Contacto </a>
+          <a href="#openModal" class="btn btn-primary" data-toggle="modal"><span class="fa fa-plus">
+          </span> Nuevo Contacto </a>
+            <?php
+              session_start();
+              if (isset($_SESSION['mensaje'])) {
+                ?>
+                <div class="alert alert-success alert-dismissible" style="margin-top:20px">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <?php echo $_SESSION['mensaje']; ?>
+                </div>
+
+                <?php
+                unset($_SESSION['mensaje']);
+                
+              }
+            ?>
           <table class="table table-bordered trable-striped" style="margin-top:20px">
             <thead>
               <tr>
@@ -73,17 +90,18 @@ require_once "modelos/agregar.modelo.php";
 
                 foreach ($agregados as $key => $value) { ?>
                   <tr>
-                    <td><?= $value['Nombre']; ?></td>
-                    <td><?= $value['Telefono']; ?></td>
-                    <td><?= $value['Correo']; ?></td>
-                    <td><?= $value['Direccion']; ?></td>
+                    <td><?php echo $value['Nombre']; ?></td>
+                    <td><?php echo $value['Telefono']; ?></td>
+                    <td><?php echo $value['Correo']; ?></td>
+                    <td><?php echo $value['Direccion']; ?></td>
                     <td>
-                      <a href="#>" class="btn btn-warning"><span class="fa fa-pencil-alt"></span></a>
-                      <a href="#" class="btn btn-danger"><span class="fa fa-times"></span></a>
+                      <a href="#edit_<?php echo $value['idPersona']; ?>" class="btn btn-warning"><span class="fa fa-edit"></span> Editar</a>
+                      <a href="#delete_<?php echo $value['idPersona']; ?>" class="btn btn-danger"><span class="fa fa-trash"></span> Eliminar</a>
                     </td>
                   </tr>
-                <?php } 
-              ?>                      
+                 <?php 
+                 } 
+             ?>                      
             </tbody>
           </table>
         </div>
