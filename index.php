@@ -58,18 +58,21 @@ require_once "modelos/formulario.modelo.php";
           </span> Nuevo Contacto </a>
             <?php
               session_start();
-              if (isset($_SESSION['mensaje'])) {
-                ?>
-                <div class="alert alert-success alert-dismissible" style="margin-top:20px">
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                  <?php echo $_SESSION['mensaje']; ?>
-                </div>
 
-                <?php
-                unset($_SESSION['mensaje']);
+              if (isset($_SESSION['mensaje'])) {
+                // Define la clase de la alerta según el contenido del mensaje
+                $claseAlerta = ($_SESSION['mensaje'] == "El usuario ha sido registrado" || $_SESSION['mensaje'] == "El usuario ha sido actualizado") ? 'alert-success' : 'alert-danger';
+                ?>
                 
+                <div class="alert <?php echo $claseAlerta; ?> alert-dismissible" style="margin-top:20px">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <?php echo $_SESSION['mensaje']; ?>
+                </div>
+            
+                <?php
+                unset($_SESSION['mensaje']); // Limpia el mensaje después de mostrarlo
               }
             ?>
           <table class="table table-bordered trable-striped" style="margin-top:20px">

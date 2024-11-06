@@ -42,6 +42,10 @@ class ControladorFormulario {
 
         if (isset($_POST["editar"])) {
 
+            if (empty($_POST["nombreContacto"]) || empty($_POST["telefonoContacto"]) || empty($_POST["correoContacto"]) || empty($_POST["direccionContacto"])) {
+                return "error"; // Si algún campo está vacío, retorna error
+            }
+
 
             $id=$_GET["id"];
             $tabla = "personas";
