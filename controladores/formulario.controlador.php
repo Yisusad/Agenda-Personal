@@ -1,6 +1,6 @@
 <?php
 
-class ControladorAgregar{
+class ControladorFormulario {
 
     static public function ctrAgregar(){
 
@@ -17,7 +17,7 @@ class ControladorAgregar{
                         "correo" => $_POST["correoContacto"],
                         "direccion" => $_POST["direccionContacto"]);
 
-            $respuesta = ModeloAgregar::mdlAgregar($tabla, $datos);
+            $respuesta = ModeloFormulario::mdlAgregar($tabla, $datos);
 
             return $respuesta;
 
@@ -32,9 +32,33 @@ class ControladorAgregar{
 
 		$tabla = "personas";
 
-		$respuesta = ModeloAgregar::mdlSeleccionarAgregados($tabla);
+		$respuesta = ModeloFormulario::mdlSeleccionarAgregados($tabla);
 
 		return $respuesta;
 
 	}
+
+    static public function ctrEditar(){
+
+        if (isset($_POST["editar"])) {
+
+
+            $id=$_GET["id"];
+            $tabla = "personas";
+
+            $datos = array("idPersona" => $id,
+                            "nombre" => $_POST["nombreContacto"], 
+                            "telefono" => $_POST["telefonoContacto"],
+                            "correo" => $_POST["correoContacto"],
+                            "direccion" => $_POST["direccionContacto"]);
+
+            $respuesta = ModeloFormulario::mdlEditar($tabla, $datos);
+
+            return $respuesta;
+
+        }else{
+
+            return "error";
+        }
+        }
 }

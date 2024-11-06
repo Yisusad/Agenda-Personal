@@ -2,7 +2,7 @@
 
 include_once('conexion.php');
 
-class ModeloAgregar{
+class ModeloFormulario {
 
     static public function mdlAgregar($tabla, $datos){
 
@@ -33,6 +33,26 @@ class ModeloAgregar{
 
 		$stmt = null;	
 
+    }
+
+    static public function mdlEditar($tabla, $datos){
+
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, telefono = :telefono, correo = :correo, direccion = :direccion WHERE idPersona = :idPersona");
+
+        $stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
+        $stmt->bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);
+        $stmt->bindParam(":correo", $datos["correo"], PDO::PARAM_STR);
+        $stmt->bindParam(":direccion", $datos["direccion"], PDO::PARAM_STR);
+        $stmt->bindParam(":idPersona", $datos["idPersona"], PDO::PARAM_STR);
+
+        if ($stmt->execute()) {
+            return "ok";
+        } else {    
+            print_r(Conexion::conectar()->errorInfo());            
+        }    
+
+        $stmt->close();
+        $stmt = null;
     }
 
 }

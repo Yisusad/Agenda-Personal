@@ -5,10 +5,10 @@ include_once('../modelos/conexion.php');
 include_once('../controladores/formulario.controlador.php');
 include_once('../modelos/formulario.modelo.php');
 
-    $agregar = ControladorFormulario::ctrAgregar();
+    $editar = ControladorFormulario::ctrEditar();
 
-    if ($agregar == "ok") {
-        $_SESSION['mensaje'] = "El usuario ha sido registrado";
+    if ($editar == "ok") {
+        $_SESSION['mensaje'] = "El usuario ha sido actualizado";
         header('location: ../index.php');
         exit(); // Importante para detener la ejecución
     } else {

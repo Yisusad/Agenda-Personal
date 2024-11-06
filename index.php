@@ -1,6 +1,6 @@
 <?php
-require_once "controladores/agregar.controlador.php";
-require_once "modelos/agregar.modelo.php";
+require_once "controladores/formulario.controlador.php";
+require_once "modelos/formulario.modelo.php";
 ?>
 <!doctype html>
 <html lang="es">
@@ -86,7 +86,7 @@ require_once "modelos/agregar.modelo.php";
               <?php
                 include_once "modelos/conexion.php";
 
-                $agregados = ControladorAgregar::ctrSeleccionarAgregados();
+                $agregados = ControladorFormulario::ctrSeleccionarAgregados();
 
                 foreach ($agregados as $key => $value) { ?>
                   <tr>
@@ -95,9 +95,10 @@ require_once "modelos/agregar.modelo.php";
                     <td><?php echo $value['Correo']; ?></td>
                     <td><?php echo $value['Direccion']; ?></td>
                     <td>
-                      <a href="#edit_<?php echo $value['idPersona']; ?>" class="btn btn-warning"><span class="fa fa-edit"></span> Editar</a>
-                      <a href="#delete_<?php echo $value['idPersona']; ?>" class="btn btn-danger"><span class="fa fa-trash"></span> Eliminar</a>
+                      <a href="#edit_<?php echo $value['idPersona']; ?>" class="btn btn-success btn-sm" data-toggle="modal"><span class="fa fa-edit"></span> Editar</a>
+                      <a href="#delete_<?php echo $value['idPersona']; ?>" class="btn btn-danger btn-sm" data-toggle="modal""><span class="fa fa-trash"></span> Eliminar</a>
                     </td>
+                    <?php include('vistas/editDeleteModal.php'); ?>
                   </tr>
                  <?php 
                  } 
