@@ -8,7 +8,7 @@ include_once('../modelos/formulario.modelo.php');
     $agregar = ControladorFormulario::ctrAgregar();
 
     if ($agregar == "ok") {
-        $_SESSION['mensaje'] = "El usuario ha sido registrado";
+        $_SESSION['mensaje'] = "El contacto ha sido registrado";
         header('location: ../index.php');
         exit(); // Importante para detener la ejecución
     } else {

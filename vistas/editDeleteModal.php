@@ -69,50 +69,13 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="container-fluid">
-                    <form action="vistas/editar.php?id=<?php echo $value['idPersona']; ?>" method="post">
-                        <div class="row form-group">
-                            <div class="col-sm-2">
-                                <label class="control-label">Nombre:</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" name="nombreContacto" value="<?php echo $value['Nombre']; ?>">
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <div class="col-sm-2">
-                                <label class="control-label">Telefono:</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <input type="tel" class="form-control" name="telefonoContacto" value="<?php echo $value['Telefono']; ?>">
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <div class="col-sm-2">
-                                <label class="control-label">Correo:</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <input type="email" class="form-control" name="correoContacto" value="<?php echo $value['Correo']; ?>">
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <div class="col-sm-2">
-                                <label class="control-label">Dirección:</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" name="direccionContacto" value="<?php echo $value['Direccion']; ?>">
-                            </div>
-                        </div>
-
-                     <div class="modal-footer">
-                        <button class="btn btn-success" type="submit" name="editar"><i class="fa fa-check"></i> Actualizar</button> 
-                        <button class="btn btn-danger" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button></button>
-                     </div>
-
-                    </form>
-                </div>
+                <p class="text-center">¿Estas seguro de borrar el contacto?</p>
+                <h2 class="text-center"><?php echo $value['Nombre']; ?></h2>
             </div>
-        </div>
-       
+            <div class="modal-footer">
+                <a href="vistas/eliminar.php?id=<?php echo $value['idPersona']; ?>" class="btn btn-danger"><span class="fa fa-trash"></span>Aceptar</a>
+                <button class="btn btn-primary" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Cancelar</button></button>
+            </div>                           
+        </div>       
     </div>
 </div>

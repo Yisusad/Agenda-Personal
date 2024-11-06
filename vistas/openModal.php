@@ -9,7 +9,7 @@
             </div>
             <div class="modal-body">
                 <div class="container-fluid">
-                    <form action="vistas/agregar.php" method="post">
+                    <form action="vistas/agregar.php" method="post" id="FormAgregar">
                         <div class="row form-group">
                             <div class="col-sm-2">
                                 <label class="control-label">Nombre:</label>
@@ -45,7 +45,7 @@
 
                      <div class="modal-footer">
                         <button class="btn btn-primary" type="submit" name="guardar"><i class="fa fa-save"></i> Guardar</button> 
-                        <button class="btn btn-danger" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button></button>
+                        <button class="btn btn-danger" type="button" data-dismiss="modal" onclick="ResetearFormulario()"><i class="fa fa-times"></i> Resetar</button></button>
                      </div>
 
                     </form>
@@ -55,3 +55,5 @@
        
     </div>
 </div>
+
+<script src="vistas/js/scripts.js"></script>

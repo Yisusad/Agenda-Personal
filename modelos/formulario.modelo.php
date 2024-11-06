@@ -55,6 +55,21 @@ class ModeloFormulario {
         $stmt = null;
     }
 
+    static public function mdlEliminar($tabla, $datos){
+
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE idPersona = :idPersona");
+
+        $stmt->bindParam(":idPersona", $datos, PDO::PARAM_STR);
+
+        if ($stmt->execute()) {
+            return "ok";
+        } else {
+            print_r(Conexion::conectar()->errorInfo());
+        }
+
+        $stmt->close();
+        $stmt = null;
+    }
 }
 
 

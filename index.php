@@ -61,7 +61,7 @@ require_once "modelos/formulario.modelo.php";
 
               if (isset($_SESSION['mensaje'])) {
                 // Define la clase de la alerta según el contenido del mensaje
-                $claseAlerta = ($_SESSION['mensaje'] == "El usuario ha sido registrado" || $_SESSION['mensaje'] == "El usuario ha sido actualizado") ? 'alert-success' : 'alert-danger';
+                $claseAlerta = ($_SESSION['mensaje'] == "El contacto ha sido registrado" || $_SESSION['mensaje'] == "El contacto ha sido actualizado" || $_SESSION['mensaje'] == "El contacto ha sido eliminado") ? 'alert-success' : 'alert-danger';
                 ?>
                 
                 <div class="alert <?php echo $claseAlerta; ?> alert-dismissible" style="margin-top:20px">

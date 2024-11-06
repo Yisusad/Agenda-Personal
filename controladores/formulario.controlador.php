@@ -64,5 +64,19 @@ class ControladorFormulario {
 
             return "error";
         }
+    }
+
+    static public function ctrEliminar(){
+        if (isset($_GET["id"])) {
+
+            $id = $_GET["id"];
+            $tabla = "personas";
+
+            $respuesta = ModeloFormulario::mdlEliminar($tabla, $id);
+
+            return $respuesta;
+        } else {
+            return "error";
         }
+    }
 }
